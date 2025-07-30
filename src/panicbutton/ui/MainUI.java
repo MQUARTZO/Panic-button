@@ -1,9 +1,11 @@
 package panicbutton.ui;
 
 import panicbutton.core.*;
-
 import javax.swing.*;
 import java.awt.*;
+
+// IMPORT NECESSÁRIO para acessar a tela de configurações
+import panicbutton.ui.ConfigUI;
 
 public class MainUI {
 
@@ -24,6 +26,8 @@ public class MainUI {
         panel.add(panicButton);
 
         JButton configButton = new JButton("Configurações");
+        // AÇÃO: abrir tela de configurações
+        configButton.addActionListener(e -> ConfigUI.exibirConfiguracoes(frame));
         panel.add(configButton);
 
         JButton exitButton = new JButton("Sair");
