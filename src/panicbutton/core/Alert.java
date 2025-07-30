@@ -1,5 +1,5 @@
 package panicbutton.core;
 
-public class Alert {
-    
+public interface Alert {
+    void send();
 }

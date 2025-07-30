@@ -1,5 +1,5 @@
 package panicbutton.core;
 
-public class PanicObserver {
-    
+public interface PanicObserver {
+    void onPanicActivated();
 }
