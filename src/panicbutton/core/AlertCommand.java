@@ -1,14 +1,13 @@
 package panicbutton.core;
 
 public class AlertCommand {
-    private final Runnable action;
+    private Alert alerta;
 
-    public AlertCommand(Runnable action) {
-        this.action = action;
+    public AlertCommand(Alert alerta) {
+        this.alerta = alerta;
     }
 
-    public void execute() {
-        System.out.println("Executando comando de alerta...");
-        action.run();
+    public void executar() {
+        alerta.enviar();
     }
 }

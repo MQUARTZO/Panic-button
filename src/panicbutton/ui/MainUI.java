@@ -1,9 +1,12 @@
 package panicbutton.ui;
 
+import panicbutton.core.*;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MainUI {
+
     public static void launchUI() {
         JFrame frame = new JFrame("Panic Button");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,6 +29,25 @@ public class MainUI {
         JButton exitButton = new JButton("Sair");
         exitButton.addActionListener(e -> System.exit(0));
         panel.add(exitButton);
+
+        // AÇÃO: Clique no botão de pânico
+        panicButton.addActionListener(e -> {
+            // Cria um alerta básico do tipo notificação local
+            Alert alerta = new BasicAlert();
+
+            // Decora com mensagem e localização
+            alerta = new MessageDecorator(alerta, "Ajuda urgente!");
+            alerta = new LocationDecorator(alerta, "-7.1356, -34.8761"); // Simula João Pessoa - PB
+
+            // Encapsula no comando
+            AlertCommand comando = new AlertCommand(alerta::enviar);
+
+            // Executa o comando
+            comando.executar();
+
+            // Mensagem de confirmação
+            JOptionPane.showMessageDialog(frame, "Alerta de pânico enviado com sucesso!");
+        });
 
         frame.getContentPane().add(panel);
         frame.setLocationRelativeTo(null);

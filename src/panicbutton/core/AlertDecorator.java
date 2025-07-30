@@ -8,7 +8,7 @@ public abstract class AlertDecorator implements Alert {
     }
 
     @Override
-    public void send() {
-        decoratedAlert.send();
+    public void enviar() {
+        decoratedAlert.enviar();
     }
 }

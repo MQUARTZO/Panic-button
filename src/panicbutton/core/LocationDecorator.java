@@ -1,18 +1,16 @@
 package panicbutton.core;
 
 public class LocationDecorator extends AlertDecorator {
+    private String localizacao;
 
-    public LocationDecorator(Alert alert) {
+    public LocationDecorator(Alert alert, String localizacao) {
         super(alert);
+        this.localizacao = localizacao;
     }
 
     @Override
-    public void send() {
-        super.send();
-        adicionarLocalizacao();
-    }
-
-    private void adicionarLocalizacao() {
-        System.out.println("Localização anexada: Latitude -7.11532, Longitude -34.861");
+    public void enviar() {
+        super.enviar();
+        System.out.println("Localização do alerta: " + localizacao);
     }
 }

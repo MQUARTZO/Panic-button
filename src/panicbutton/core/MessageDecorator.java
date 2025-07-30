@@ -1,7 +1,7 @@
 package panicbutton.core;
 
 public class MessageDecorator extends AlertDecorator {
-    private final String mensagem;
+    private String mensagem;
 
     public MessageDecorator(Alert alert, String mensagem) {
         super(alert);
@@ -9,12 +9,8 @@ public class MessageDecorator extends AlertDecorator {
     }
 
     @Override
-    public void send() {
-        super.send();
-        adicionarMensagem();
-    }
-
-    private void adicionarMensagem() {
+    public void enviar() {
+        super.enviar();
         System.out.println("Mensagem personalizada: " + mensagem);
     }
 }
