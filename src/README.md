@@ -118,4 +118,4 @@ Localização do alerta: João Pessoa - PB
 
 ## 👨‍💻 Autor
 
-Desenvolvido por Mateus Araújo Silva — Engenharia de Computação - IFPB
+Desenvolvido (Equipe em Analise) — Engenharia de Computação - IFPB
